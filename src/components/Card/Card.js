@@ -3,7 +3,7 @@ import ButtonComponent from "../Button/Button";
 import "./Card.css";
 
 const CardComponent = ({ name, image, speed, resiliency, creationDate }) => {
-  const actionOnClickCreate = () => {};
+  /* const actionOnClickCreate = () => {}; */
   const actionOnClickUpdate = () => {};
   const actionOnClickDelete = () => {};
 
@@ -24,10 +24,7 @@ const CardComponent = ({ name, image, speed, resiliency, creationDate }) => {
         <ListGroupItem>Fecha de creación: {creationDate}</ListGroupItem>
       </ListGroup>
       <Card.Body>
-        <ButtonGroup
-          className="justify-content-between"
-          aria-label="Basic example"
-        >
+        <ButtonGroup className="offset-2 gap-sm-3" aria-label="Buttons">
           <ButtonComponent
             onClick={actionOnClickUpdate}
             buttonText={"Update"}

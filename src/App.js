@@ -1,12 +1,13 @@
+import { Container } from "react-bootstrap";
 import "./App.css";
-import CardComponent from "./components/Card/Card";
+import CardList from "./components/List/CardList";
 
 function App() {
   return (
     <>
-      <div className="container">
-        <CardComponent />
-      </div>
+      <Container>
+        <CardList />
+      </Container>
     </>
   );
 }
