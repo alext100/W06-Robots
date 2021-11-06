@@ -9,7 +9,9 @@ const ButtonComponent = ({ className, actionOnClick, buttonText }) => {
       className={className}
       onClick={actionOnClick}
       value={buttonText}
-    />
+    >
+      {buttonText}
+    </Button>
   );
 };
 export default ButtonComponent;

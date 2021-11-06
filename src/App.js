@@ -1,9 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
-import ButtonComponent from "./components/Button/Button";
+import CardComponent from "./components/Card/Card";
 
 function App() {
-  return <ButtonComponent />;
+  return (
+    <>
+      <div className="container">
+        <CardComponent />
+      </div>
+    </>
+  );
 }
 
 export default App;
