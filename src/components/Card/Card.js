@@ -1,5 +1,6 @@
 import { ButtonGroup, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import ButtonComponent from "../Button/Button";
+import "./Card.css";
 
 const CardComponent = ({ name, image, speed, resiliency, creationDate }) => {
   const actionOnClickCreate = () => {};
@@ -8,7 +9,12 @@ const CardComponent = ({ name, image, speed, resiliency, creationDate }) => {
 
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={image} />
+      <Card.Img
+        className="card-image"
+        variant="top"
+        src={image}
+        alt="Robot image"
+      />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
       </Card.Body>
@@ -22,10 +28,6 @@ const CardComponent = ({ name, image, speed, resiliency, creationDate }) => {
           className="justify-content-between"
           aria-label="Basic example"
         >
-          <ButtonComponent
-            onClick={actionOnClickCreate}
-            buttonText={"Create"}
-          />
           <ButtonComponent
             onClick={actionOnClickUpdate}
             buttonText={"Update"}
