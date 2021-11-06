@@ -1,4 +1,6 @@
-const Button = ({ className, actionOnClick, buttonText }) => {
+import { Button } from "react-bootstrap";
+
+const ButtonComponent = ({ className, actionOnClick, buttonText }) => {
   return (
     <Button
       variant="primary"
@@ -6,9 +8,8 @@ const Button = ({ className, actionOnClick, buttonText }) => {
       type="submit"
       className={className}
       onClick={actionOnClick}
-    >
-      {buttonText}
-    </Button>
+      value={buttonText}
+    />
   );
 };
-export default Button;
+export default ButtonComponent;

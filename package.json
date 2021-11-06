@@ -4,18 +4,23 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
-    "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.0.1",
     "react-scripts": "4.0.3",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.0",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll --collect-coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -35,5 +40,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@testing-library/react": "^12.1.2"
+  },
+  "description": "Week 6 - Challenge WeekEnd Robots Tendrás que crear un frontend en React (con Redux) que permita al usuario gestionar un listado con sus robots. El usuario debe poder crear, modificar y borrar robots. Cada robot debe mostrar un nombre, una imagen (URL de internet) y unas características:",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alext100/W06-Robots.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alext100/W06-Robots/issues"
+  },
+  "homepage": "https://github.com/alext100/W06-Robots#readme"
 }
