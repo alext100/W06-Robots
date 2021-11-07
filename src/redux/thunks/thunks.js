@@ -3,6 +3,7 @@ import {
   createRobotAction,
   deleteRobotAction,
   loadRobotsAction,
+  updateRobotAction,
 } from "../actions/actionCreator";
 
 const urlApi = process.env.REACT_APP_API_URL;
@@ -31,5 +32,15 @@ export const createRobotThunk = (robot) => {
       robot
     );
     dispatch(createRobotAction(newRobot));
+  };
+};
+
+export const updateRobotThunk = (robot) => {
+  return async (dispatch) => {
+    const { data: modifiedRobot } = await axios.put(
+      `${urlApi}/update?token=${token}`,
+      robot
+    );
+    dispatch(updateRobotAction(modifiedRobot));
   };
 };
