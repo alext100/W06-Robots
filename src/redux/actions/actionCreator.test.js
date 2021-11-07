@@ -1,5 +1,9 @@
 import { getRobots } from "../../factories/robotsFactory";
-import { deleteRobotAction, loadRobotsAction } from "./actionCreator";
+import {
+  createRobotAction,
+  deleteRobotAction,
+  loadRobotsAction,
+} from "./actionCreator";
 import actionTypes from "./actionTypes";
 
 describe("Given a loadRobotsAction actionCreator", () => {
@@ -28,6 +32,22 @@ describe("Given a deleteRobotAction actionCreator", () => {
       };
 
       const actionResult = deleteRobotAction(id);
+
+      expect(actionResult).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given a createRobotAction actionCreator", () => {
+  describe("When it receives a robot", () => {
+    test("Then it should return a create type action with the robot received", () => {
+      const robots = getRobots();
+      const expectedAction = {
+        type: actionTypes.createRobot,
+        robot: robots,
+      };
+
+      const actionResult = createRobotAction(robots);
 
       expect(actionResult).toEqual(expectedAction);
     });

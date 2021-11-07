@@ -1,5 +1,9 @@
 import axios from "axios";
-import { deleteRobotAction, loadRobotsAction } from "../actions/actionCreator";
+import {
+  createRobotAction,
+  deleteRobotAction,
+  loadRobotsAction,
+} from "../actions/actionCreator";
 
 const urlApi = process.env.REACT_APP_API_URL;
 const token = process.env.REACT_APP_TOKEN;
@@ -18,4 +22,14 @@ export const deleteRobotThunk = (idRobot) => async (dispatch) => {
   if (status === 200) {
     dispatch(deleteRobotAction(idRobot));
   }
+};
+
+export const createRobotThunk = (robot) => {
+  return async (dispatch) => {
+    const { data: newRobot } = await axios.post(
+      `${urlApi}/create?token=${token}`,
+      robot
+    );
+    dispatch(createRobotAction(newRobot));
+  };
 };
