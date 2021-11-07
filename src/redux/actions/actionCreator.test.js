@@ -1,8 +1,9 @@
-import { getRobots } from "../../factories/robotsFactory";
+import { getRobot, getRobots } from "../../factories/robotsFactory";
 import {
   createRobotAction,
   deleteRobotAction,
   loadRobotsAction,
+  updateRobotAction,
 } from "./actionCreator";
 import actionTypes from "./actionTypes";
 
@@ -48,6 +49,22 @@ describe("Given a createRobotAction actionCreator", () => {
       };
 
       const actionResult = createRobotAction(robots);
+
+      expect(actionResult).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given an updateRobotAction actionCreator", () => {
+  describe("When it receives a robot", () => {
+    test("Then it should return a update type action with the robot received", () => {
+      const modifiedRobot = getRobot();
+      const expectedAction = {
+        type: actionTypes.updateRobot,
+        robot: modifiedRobot,
+      };
+
+      const actionResult = updateRobotAction(modifiedRobot);
 
       expect(actionResult).toEqual(expectedAction);
     });
