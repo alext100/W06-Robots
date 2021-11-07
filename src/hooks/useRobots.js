@@ -4,6 +4,7 @@ import {
   createRobotThunk,
   deleteRobotThunk,
   loadRobotsThunk,
+  updateRobotThunk,
 } from "../redux/thunks/thunks";
 
 const useRobots = () => {
@@ -22,7 +23,11 @@ const useRobots = () => {
     dispatch(createRobotThunk(robot));
   };
 
-  return { robots, loadRobots, deleteRobot, createRobot };
+  const updateRobot = (robot) => {
+    dispatch(updateRobotThunk(robot));
+  };
+
+  return { robots, loadRobots, deleteRobot, createRobot, updateRobot };
 };
 
 export default useRobots;
