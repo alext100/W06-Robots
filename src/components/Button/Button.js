@@ -5,7 +5,7 @@ const ButtonComponent = ({ className, actionOnClick, buttonText }) => {
     <Button
       variant="primary"
       size="sm"
-      type="submit"
+      type="button"
       className={className}
       onClick={actionOnClick}
       value={buttonText}

@@ -1,11 +1,19 @@
 import { ButtonGroup, Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import useRobots from "../../hooks/useRobots";
 import ButtonComponent from "../Button/Button";
 import "./CardComponent.css";
 
-const CardComponent = ({ name, image, speed, resiliency, creationDate }) => {
+const CardComponent = ({
+  name,
+  image,
+  speed,
+  resiliency,
+  creationDate,
+  id,
+}) => {
+  const { deleteRobot } = useRobots();
   /* const actionOnClickCreate = () => {}; */
   const actionOnClickUpdate = () => {};
-  const actionOnClickDelete = () => {};
 
   return (
     <Card style={{ width: "18rem" }}>
@@ -33,7 +41,7 @@ const CardComponent = ({ name, image, speed, resiliency, creationDate }) => {
             buttonText={"Update"}
           />
           <ButtonComponent
-            onClick={actionOnClickDelete}
+            actionOnClick={() => deleteRobot(id)}
             buttonText={"Delete"}
           />
         </ButtonGroup>
