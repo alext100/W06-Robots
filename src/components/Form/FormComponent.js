@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
 import useRobots from "../../hooks/useRobots";
-import ButtonComponent from "../Button/Button";
+import ButtonComponent from "../Button/ButtonComponent";
 import PropTypes from "prop-types";
 
 const FormComponent = () => {

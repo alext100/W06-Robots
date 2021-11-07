@@ -1,5 +1,4 @@
 import { Row, Col, Container } from "react-bootstrap";
-import "./App.css";
 import FormComponent from "./components/Form/FormComponent";
 import CardList from "./components/List/CardList";
 
