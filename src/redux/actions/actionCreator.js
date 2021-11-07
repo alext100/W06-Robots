@@ -14,3 +14,8 @@ export const createRobotAction = (robot) => ({
   type: actionTypes.createRobot,
   robot,
 });
+
+export const updateRobotAction = (robot) => ({
+  type: actionTypes.updateRobot,
+  robot,
+});
