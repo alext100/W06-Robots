@@ -17,6 +17,7 @@ describe("Given a robotsReducer reducer", () => {
       expect(newList).toContainEqual(newRobot);
     });
   });
+
   describe("When it receives an empty robots list and a load action with three robots", () => {
     test("Then it should return a new robots list with the three robots received", () => {
       const initialRobots = [];
@@ -29,6 +30,21 @@ describe("Given a robotsReducer reducer", () => {
       const newList = robotsReducer(initialRobots, action);
 
       expect(newList).toEqual(robots);
+    });
+  });
+
+  describe("When it receives a robots list and a delete action with an id", () => {
+    test("Then it should return a new robots list without the robot received", () => {
+      const initialRobots = getRobots(3);
+      const robotToDelete = initialRobots[0];
+      const action = {
+        type: actionTypes.deleteRobot,
+        id: robotToDelete.id, // test failed when in robotsReducer used '_id'
+      };
+
+      const newRobotsList = robotsReducer(initialRobots, action);
+
+      expect(newRobotsList).not.toContainEqual(robotToDelete);
     });
   });
 });
