@@ -16,7 +16,7 @@ const CardComponent = ({
   const actionOnClickUpdate = () => {};
 
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "15rem" }}>
       <Card.Img
         className="card-image"
         variant="top"

@@ -26,7 +26,10 @@ export const deleteRobotThunk = (idRobot) => async (dispatch) => {
 
 export const createRobotThunk = (robot) => {
   return async (dispatch) => {
-    const { data: newRobot } = await axios.post(urlApi, robot);
+    const { data: newRobot } = await axios.post(
+      `${urlApi}/create?token=${token}`,
+      robot
+    );
     dispatch(createRobotAction(newRobot));
   };
 };
