@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { CardGroup, Row } from "react-bootstrap";
 import useRobots from "../../hooks/useRobots";
-import CardComponent from "../Card/Card";
+import CardComponent from "../Card/CardComponent";
 
 const CardList = () => {
   const { robots, loadRobots } = useRobots();
