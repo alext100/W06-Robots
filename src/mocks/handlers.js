@@ -4,7 +4,7 @@ const urlApi = process.env.REACT_APP_API_URL;
 
 export const handlers = [
   rest.get(urlApi, async (req, res, ctx) => {
-    const resp = res(
+    return res(
       ctx.json([
         {
           _id: "61871f2936ad452a8380bfb1",
@@ -48,6 +48,5 @@ export const handlers = [
         },
       ])
     );
-    return resp;
   }),
 ];
