@@ -1,6 +1,6 @@
 import { ButtonGroup, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import useRobots from "../../hooks/useRobots";
-import ButtonComponent from "../Button/Button";
+import ButtonComponent from "../Button/ButtonComponent";
 import "./CardComponent.css";
 
 const CardComponent = ({
@@ -12,7 +12,6 @@ const CardComponent = ({
   id,
 }) => {
   const { deleteRobot } = useRobots();
-  /* const actionOnClickCreate = () => {}; */
   const actionOnClickUpdate = () => {};
 
   return (
