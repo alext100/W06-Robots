@@ -17,4 +17,18 @@ describe("Given a robotsReducer reducer", () => {
       expect(newList).toContainEqual(newRobot);
     });
   });
+  describe("When it receives an empty robots list and a load action with three robots", () => {
+    test("Then it should return a new robots list with the three robots received", () => {
+      const initialRobots = [];
+      const robots = getRobots(3);
+      const action = {
+        type: actionTypes.loadRobots,
+        robots: robots,
+      };
+
+      const newList = robotsReducer(initialRobots, action);
+
+      expect(newList).toEqual(robots);
+    });
+  });
 });
