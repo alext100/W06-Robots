@@ -1,6 +1,6 @@
 import { ButtonGroup, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import ButtonComponent from "../Button/Button";
-import "./Card.css";
+import "./CardComponent.css";
 
 const CardComponent = ({ name, image, speed, resiliency, creationDate }) => {
   /* const actionOnClickCreate = () => {}; */
@@ -18,7 +18,10 @@ const CardComponent = ({ name, image, speed, resiliency, creationDate }) => {
       <Card.Body>
         <Card.Title>{name}</Card.Title>
       </Card.Body>
-      <ListGroup className="list-group-flush">
+      <ListGroup
+        className="list-group-flush"
+        data-testid={"List-of-robot-caracteristics"}
+      >
         <ListGroupItem>Velocidad: {speed}</ListGroupItem>
         <ListGroupItem>Resistencia: {resiliency}</ListGroupItem>
         <ListGroupItem>Fecha de creación: {creationDate}</ListGroupItem>
