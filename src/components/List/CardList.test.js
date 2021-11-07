@@ -28,7 +28,7 @@ describe("Given a CardList component", () => {
           <CardList robots={robots} />
         </Provider>
       );
-      const textToFind = await screen.findByText("Velocidad");
+      const textToFind = await screen.findByText("Nao");
 
       expect(textToFind).toBeInTheDocument();
     });
