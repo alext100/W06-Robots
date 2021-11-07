@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
 import useRobots from "../../hooks/useRobots";
 import ButtonComponent from "../Button/Button";
+import PropTypes from "prop-types";
 
 const FormComponent = () => {
   const initialData = {
@@ -28,7 +29,7 @@ const FormComponent = () => {
 
   const onCreateCard = (event) => {
     event.preventDefault();
-    createRobot(cardData, cardData.id);
+    createRobot(cardData);
     resetForm();
   };
 
@@ -41,6 +42,7 @@ const FormComponent = () => {
             required
             placeholder="name"
             type="text"
+            maxLength="30"
             value={cardData.name}
             onChange={changeData}
           />
@@ -51,7 +53,7 @@ const FormComponent = () => {
         <Form.Label>Imagen</Form.Label>
         <FloatingLabel
           controlId="image"
-          label="Url og image..."
+          label="Url of image..."
           className="mb-3"
         >
           <Form.Control
@@ -70,7 +72,9 @@ const FormComponent = () => {
           <Form.Control
             required
             placeholder="speed"
-            type="text"
+            type="number"
+            min="0"
+            max="10"
             value={cardData.speed}
             onChange={changeData}
           />
@@ -83,7 +87,9 @@ const FormComponent = () => {
           <Form.Control
             required
             placeholder="resiliency"
-            type="text"
+            type="number"
+            min="0"
+            max="10"
             value={cardData.resiliency}
             onChange={changeData}
           />
@@ -110,6 +116,16 @@ const FormComponent = () => {
       />
     </Form>
   );
+};
+
+FormComponent.propTypes = {
+  cardData: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    speed: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).isRequired,
+    resiliency: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).isRequired,
+    creationDate: PropTypes.string.isRequired,
+  }),
 };
 
 export default FormComponent;
