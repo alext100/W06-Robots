@@ -14,6 +14,13 @@ const CardComponent = ({
   const { deleteRobot } = useRobots();
   const actionOnClickUpdate = () => {};
 
+  const formatDate = (date) => {
+    const dateObject = new Date(date);
+    return `${dateObject.getDate()}-${
+      dateObject.getMonth() + 1
+    }-${dateObject.getFullYear()}`;
+  };
+
   return (
     <Card style={{ width: "15rem" }}>
       <Card.Img
@@ -31,7 +38,9 @@ const CardComponent = ({
       >
         <ListGroupItem>Velocidad: {speed}</ListGroupItem>
         <ListGroupItem>Resistencia: {resiliency}</ListGroupItem>
-        <ListGroupItem>Fecha de creación: {creationDate}</ListGroupItem>
+        <ListGroupItem>
+          Fecha de creación: {formatDate(creationDate)}
+        </ListGroupItem>
       </ListGroup>
       <Card.Body>
         <ButtonGroup className="offset-2 gap-sm-3" aria-label="Buttons">
