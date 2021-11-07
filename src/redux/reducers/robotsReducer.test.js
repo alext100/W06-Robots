@@ -47,4 +47,23 @@ describe("Given a robotsReducer reducer", () => {
       expect(newRobotsList).not.toContainEqual(robotToDelete);
     });
   });
+
+  describe("When it receives a robots list and a update action with a robot", () => {
+    test("Then it should return a new robots list including the modified robot", () => {
+      const initialRobots = getRobots(3);
+      const modifiedRobot = {
+        ...initialRobots[1],
+        speed: 3,
+        name: "Modified robot",
+      };
+      const action = {
+        type: actionTypes.updateRobot,
+        robot: modifiedRobot,
+      };
+
+      const newList = robotsReducer(initialRobots, action);
+
+      expect(newList).toContainEqual(modifiedRobot);
+    });
+  });
 });
