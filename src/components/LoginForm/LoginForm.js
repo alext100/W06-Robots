@@ -1,28 +1,33 @@
 import { useState } from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUserThunk } from "../../redux/thunks/userThunks";
 import ButtonComponent from "../Button/ButtonComponent";
 
 const LoginForm = () => {
+  const { isAuthenticated } = useSelector(({ user }) => user);
   const initialData = {
     username: "",
     password: "",
   };
 
-  const [cardData, setCardData] = useState(initialData);
+  const [userData, setUserData] = useState(initialData);
+  const dispatch = useDispatch();
 
   const changeData = (event) => {
-    setCardData({
-      ...cardData,
+    setUserData({
+      ...userData,
       [event.target.id]: event.target.value,
     });
   };
 
   const resetForm = () => {
-    setCardData(initialData);
+    setUserData(initialData);
   };
 
   const onLogin = (event) => {
     event.preventDefault();
+    dispatch(loginUserThunk(userData));
     resetForm();
   };
 
@@ -42,7 +47,7 @@ const LoginForm = () => {
               placeholder="username"
               type="text"
               maxLength="30"
-              value={cardData.username}
+              value={userData.username}
               onChange={changeData}
             />
           </FloatingLabel>
@@ -59,7 +64,7 @@ const LoginForm = () => {
               required
               placeholder="password"
               type="password"
-              value={cardData.password}
+              value={userData.password}
               onChange={changeData}
             />
           </FloatingLabel>

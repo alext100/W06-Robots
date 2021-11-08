@@ -11,14 +11,14 @@ const token = process.env.REACT_APP_TOKEN;
 
 export const loadRobotsThunk = () => {
   return async (dispatch) => {
-    const { data: robots } = await axios.get(urlApi);
+    const { data: robots } = await axios.get(`${urlApi}/robots`);
     dispatch(loadRobotsAction(robots));
   };
 };
 
 export const deleteRobotThunk = (idRobot) => async (dispatch) => {
   const { status } = await axios.delete(
-    `${urlApi}/delete/${idRobot}?token=${token}`
+    `${urlApi}/robots/delete/${idRobot}?token=${token}`
   );
   if (status === 200) {
     dispatch(deleteRobotAction(idRobot));
@@ -28,7 +28,7 @@ export const deleteRobotThunk = (idRobot) => async (dispatch) => {
 export const createRobotThunk = (robot) => {
   return async (dispatch) => {
     const { data: newRobot } = await axios.post(
-      `${urlApi}/create?token=${token}`,
+      `${urlApi}/robots/create?token=${token}`,
       robot
     );
     dispatch(createRobotAction(newRobot));
@@ -38,7 +38,7 @@ export const createRobotThunk = (robot) => {
 export const updateRobotThunk = (robot) => {
   return async (dispatch) => {
     const { data: modifiedRobot } = await axios.put(
-      `${urlApi}/update?token=${token}`,
+      `${urlApi}/robots/update?token=${token}`,
       robot
     );
     dispatch(updateRobotAction(modifiedRobot));
