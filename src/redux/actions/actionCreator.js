@@ -19,3 +19,12 @@ export const updateRobotAction = (robot) => ({
   type: actionTypes.updateRobot,
   robot,
 });
+
+export const userLoginAction = (user) => ({
+  type: actionTypes.userLogin,
+  user,
+});
+
+export const userLogoutAction = () => ({
+  type: actionTypes.userLogout,
+});
