@@ -5,7 +5,6 @@ import { loginUserThunk } from "../../redux/thunks/userThunks";
 import ButtonComponent from "../Button/ButtonComponent";
 
 const LoginForm = () => {
-  const { isAuthenticated } = useSelector(({ user }) => user);
   const initialData = {
     username: "",
     password: "",
