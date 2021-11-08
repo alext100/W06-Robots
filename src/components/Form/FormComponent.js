@@ -55,7 +55,7 @@ const FormComponent = () => {
           <Form.Label>Imagen</Form.Label>
           <FloatingLabel
             controlId="image"
-            label="Url of image..."
+            label="URL de la imagen..."
             className="mb-3"
           >
             <Form.Control

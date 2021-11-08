@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUserThunk } from "../../redux/thunks/userThunks";
 import ButtonComponent from "../Button/ButtonComponent";
 
 const LoginForm = () => {
+  const { isAuthenticated } = useSelector(({ user }) => user);
   const initialData = {
     username: "",
     password: "",
