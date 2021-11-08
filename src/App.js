@@ -1,6 +1,7 @@
 import { Row, Col, Container } from "react-bootstrap";
 import FormComponent from "./components/Form/FormComponent";
 import CardList from "./components/List/CardList";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
             <CardList />
           </Col>
           <Col sm={5}>
+            <LoginForm />
             <FormComponent />
           </Col>
         </Row>
