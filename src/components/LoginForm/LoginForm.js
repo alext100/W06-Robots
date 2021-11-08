@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { loginUserThunk } from "../../redux/thunks/userThunks";
 import ButtonComponent from "../Button/ButtonComponent";
 
