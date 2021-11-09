@@ -17,9 +17,14 @@ export const loadRobotsThunk = () => {
 };
 
 export const deleteRobotThunk = (idRobot) => async (dispatch) => {
-  const { status } = await axios.delete(
-    `${urlApi}/robots/delete/${idRobot}?token=${token}`
-  );
+  const { status } = await axios.delete(`${urlApi}/robots/delete/${idRobot}`, {
+    headers: {
+      Authorization:
+        "Bearer " +
+        JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY))
+          .token,
+    },
+  });
   if (status === 200) {
     dispatch(deleteRobotAction(idRobot));
   }
@@ -28,8 +33,17 @@ export const deleteRobotThunk = (idRobot) => async (dispatch) => {
 export const createRobotThunk = (robot) => {
   return async (dispatch) => {
     const { data: newRobot } = await axios.post(
-      `${urlApi}/robots/create?token=${token}`,
-      robot
+      `${urlApi}/robots/create`,
+      robot,
+      {
+        headers: {
+          Authorization:
+            "Bearer " +
+            JSON.parse(
+              localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
+            ).token,
+        },
+      }
     );
     dispatch(createRobotAction(newRobot));
   };
@@ -38,8 +52,17 @@ export const createRobotThunk = (robot) => {
 export const updateRobotThunk = (robot) => {
   return async (dispatch) => {
     const { data: modifiedRobot } = await axios.put(
-      `${urlApi}/robots/update?token=${token}`,
-      robot
+      `${urlApi}/robots/update`,
+      robot,
+      {
+        headers: {
+          Authorization:
+            "Bearer " +
+            JSON.parse(
+              localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
+            ).token,
+        },
+      }
     );
     dispatch(updateRobotAction(modifiedRobot));
   };
