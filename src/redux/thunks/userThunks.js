@@ -12,5 +12,8 @@ export const loginUserThunk = (user) => async (dispatch) => {
     const user = jwtDecode(token);
     dispatch(userLoginAction(user));
     localStorage.setItem(localStorageKey, JSON.stringify({ token: token }));
+  } else {
+    const error = new Error("Thunk error!");
+    error.code = 444;
   }
 };

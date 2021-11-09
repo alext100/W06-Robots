@@ -37,12 +37,16 @@ const FormComponent = () => {
     <>
       <h1 className="h3 fs-4">Create Robot</h1>
       <Form className="form-create" autoComplete="off" onSubmit={onCreateCard}>
-        <Form.Group className="col-md-11" controlId="name">
+        <Form.Group className="col-md-11" controlId="robot-name">
           <Form.Label>Nombre de robot</Form.Label>
-          <FloatingLabel controlId="name" label="Nombre..." className="mb-3">
+          <FloatingLabel
+            controlId="robot-name"
+            label="Nombre..."
+            className="mb-3"
+          >
             <Form.Control
               required
-              placeholder="name"
+              placeholder="robot-name"
               type="text"
               maxLength="30"
               value={cardData.name}
