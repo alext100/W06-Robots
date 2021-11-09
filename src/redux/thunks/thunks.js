@@ -7,7 +7,6 @@ import {
 } from "../actions/actionCreator";
 
 const urlApi = process.env.REACT_APP_API_URL;
-const token = process.env.REACT_APP_TOKEN;
 
 export const loadRobotsThunk = () => {
   return async (dispatch) => {
