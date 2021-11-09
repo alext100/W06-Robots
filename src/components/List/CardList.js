@@ -15,8 +15,8 @@ const CardList = () => {
       <Row xs={1} md={2} className="g-3">
         {robots.map((robot) => (
           <CardComponent
-            key={robot._id}
-            id={robot._id}
+            key={robot.id}
+            id={robot.id}
             name={robot.name}
             image={robot.image}
             speed={robot.speed}

@@ -9,7 +9,7 @@ const robotsReducer = (robots = [], action) => {
       break;
 
     case actionTypes.deleteRobot:
-      newRobots = robots.filter((robot) => robot._id !== action.id);
+      newRobots = robots.filter((robot) => robot.id !== action.id);
       break;
 
     case actionTypes.createRobot:

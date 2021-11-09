@@ -6,7 +6,7 @@ import ButtonComponent from "../Button/ButtonComponent";
 
 const LoginForm = () => {
   const initialData = {
-    username: "",
+    name: "",
     password: "",
   };
 
@@ -34,19 +34,19 @@ const LoginForm = () => {
     <>
       <h1 className="h3 fs-4">Login</h1>
       <Form className="form-create" autoComplete="off" onSubmit={onLogin}>
-        <Form.Group className="col-md-11" controlId="username">
+        <Form.Group className="col-md-11" controlId="name">
           <Form.Label>Username</Form.Label>
           <FloatingLabel
-            controlId="username"
+            controlId="name"
             label="Tu nombre de usuario..."
             className="mb-3"
           >
             <Form.Control
               required
-              placeholder="username"
+              placeholder="name"
               type="text"
               maxLength="30"
-              value={userData.username}
+              value={userData.name}
               onChange={changeData}
             />
           </FloatingLabel>
